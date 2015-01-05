@@ -27,7 +27,7 @@ $(() => {
 
 		$toolbar.children('.var')
 			.attr('class', 'button-set var note-actions')
-			.html('<button>erase</button>');
+			.html('<button class="button-erase">erase</button>');
 	});
 
 	$paper.on('blur', '.note', (event) => {
@@ -38,6 +38,13 @@ $(() => {
 	});
 
 	$(window).keyup(() => $selected && $selected.focus());
+
+	$toolbar.on('click', '.button-erase', (event) => {
+		if ($selected) {
+			delete_note(+$selected.attr('data-id'));
+			$selected = null;
+		}
+	})
 
 	var delete_note = function (id) {
 		$('.note[data-id=' + id + ']').remove();
