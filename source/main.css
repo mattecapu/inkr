@@ -17,3 +17,13 @@ body {
 	line-height: 1.5;
 	color: #2D2D3D;
 }
+
+.paper {
+	height: 100vh;
+	width: 100vw;
+}
+
+.note {
+	position: absolute;
+	background: red;
+}
