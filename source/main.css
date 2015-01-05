@@ -18,25 +18,34 @@ body {
 	color: #2d2d3c;
 }
 
+.toolbar {
+	background: #2cdc4f;
+}
+	.button-set {
+		display: inline-block;
+		margin: 0 10px;
+	}
+	.sep {
+		border-left: 1px solid #ddd;
+		width: 1px;
+	}
+
 .paper {
 	height: 300vh;
 	width: 100%;
 }
-
-.note {
-	position: absolute;
-	background: #eee;
-	width: 10em;
-	height: 1.5em;
-	padding: 5px 15px;
-	border: none;
-	outline: none;
-	resize: none;
-	overflow: hidden;
-	z-index: 10;
-}
-.note.selected {
-	border: 1px solid #2d2d3c;
-	resize: both;
-	z-index: 100;
-}
+	.note {
+		position: absolute;
+		width: 10em;
+		height: 1.5em;
+		padding: 5px 15px;
+		border: none;
+		outline: none;
+		resize: none;
+		overflow: hidden;
+		z-index: 10;
+	}
+	.note.selected {
+		resize: both;
+		z-index: 100;
+	}

@@ -1,26 +1,46 @@
 $(() => {
 	var $paper = $(".paper");
+	var $toolbar = $(".toolbar");
+
 	var $selected = null;
 	var id = 1;
 
 	$paper.click((event) => {
+		$('<textarea class="note"></textarea>')
+			.css({top: event.clientY + $(window).scrollTop() - 42, left: event.clientX + $(window).scrollLeft()})
+			.attr('data-id', id++)
+			.appendTo($paper)
+			.click();
+	});
+
+	$paper.on('click', '.note', (event) => {
 
 		if ($selected) $selected.removeClass('selected');
 
-		$selected = $(document.elementFromPoint(event.clientX, event.clientY));
+		$selected = $(event.target).addClass('selected').focus();
 
-		if (!$selected.hasClass('note')) {
-			$selected = $('<textarea class="note"></textarea>');
-			$selected
-				.css({top: event.clientY - 10 + $(window).scrollTop(), left: event.clientX + $(window).scrollLeft()})
-				.attr('data-id', id++)
-				.appendTo($paper);
-		}
-
-		$selected.addClass('selected').focus();
-
-		console.log(event.clientX, event.clientY, $selected);
+		return false;
 	});
-	
-	$(window).keyup(() => $paper.focus());
+
+	$paper.on('click', '.note', (event) => {
+		if ($toolbar.children('.var').hasClass('note-actions')) return;
+
+		$toolbar.children('.var')
+			.attr('class', 'button-set var note-actions')
+			.html('<button>erase</button>');
+	});
+
+	$paper.on('blur', '.note', (event) => {
+		var $note = $(event.target);
+		if ('' === $.trim($note.val())) {
+			delete_note(+$note.attr('data-id'));
+		}
+	});
+
+	$(window).keyup(() => $selected && $selected.focus());
+
+	var delete_note = function (id) {
+		$('.note[data-id=' + id + ']').remove();
+	};
+
 });
