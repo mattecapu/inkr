@@ -12,32 +12,34 @@ html, body {
 }
 
 body {
-	font-family: 'Consolas', monospace;
-	font-size: 16px;
 	line-height: 1.5;
 	color: #2d2d3c;
 }
 
 .toolbar {
-	background: #2cdc4f;
+	background: #000;
+	font-family: 'Consolas', monospace;
+	font-size: 16px;
 }
 	.button-set {
 		display: inline-block;
 		margin: 0 10px;
 	}
 	.sep {
-		border-left: 1px solid #ddd;
+		border-left: 1px solid #F7F7F7;
 		width: 1px;
 	}
 
 .paper {
 	height: 300vh;
 	width: 100%;
+	font-family: 'Georgia', serif;
+	font-size: 25px;
 }
 	.note {
 		position: absolute;
 		width: 10em;
-		height: 1.5em;
+		height: 2.1em;
 		padding: 5px 15px;
 		border: none;
 		outline: none;
@@ -46,6 +48,7 @@ body {
 		z-index: 10;
 	}
 	.note.selected {
+		background: #F7F7F7;
 		resize: both;
 		z-index: 100;
 	}
