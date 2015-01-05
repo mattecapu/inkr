@@ -7,7 +7,7 @@
     "build": "npm run build:js && npm run build:css && copy source\\index.html build\\index.html /Y",
     "build:js": "node build.js source/main.js > build/main.js",
     "build:css": "autoprefixer source/main.css -o build/main.css",
-	"build:watch": "watch \"npm run build\" source"
+    "build:watch": "watch \"npm run build\" source"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,10 @@
   "devDependencies": {
     "jstransform": "^8.2.0",
     "autoprefixer": "^4.0.0",
-	"watch": "latest"
+    "watch": "latest"
   },
   "dependencies": {
-    "jquery": "^2.1.3"
+    "jquery": "^2.1.3",
+    "normalize.css": "^3.0.2"
   }
 }
