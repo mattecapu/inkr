@@ -1,0 +1,30 @@
+{
+  "name": "more",
+  "version": "1.0.0",
+  "description": "an ambitious tool to do everything you can do with a notebook, but better",
+  "main": "index.html",
+  "scripts": {
+    "build": "npm run build:js && npm run build:css && copy source\\index.html build\\index.html /Y",
+    "build:js": "node build.js source/main.js > build/main.js",
+    "build:css": "autoprefixer source/main.css -o build/main.css",
+	"build:watch": "watch \"npm run build\" source"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mattecapu/more"
+  },
+  "author": "Matteo Capucci <mattecapu@live.it>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattecapu/more/issues"
+  },
+  "homepage": "https://github.com/mattecapu/more",
+  "devDependencies": {
+    "jstransform": "^8.2.0",
+    "autoprefixer": "^4.0.0",
+	"watch": "latest"
+  },
+  "dependencies": {
+    "jquery": "^2.1.3"
+  }
+}
