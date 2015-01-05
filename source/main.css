@@ -15,15 +15,28 @@ body {
 	font-family: 'Consolas', monospace;
 	font-size: 16px;
 	line-height: 1.5;
-	color: #2D2D3D;
+	color: #2d2d3c;
 }
 
 .paper {
-	height: 100vh;
-	width: 100vw;
+	height: 300vh;
+	width: 100%;
 }
 
 .note {
 	position: absolute;
-	background: red;
+	background: #eee;
+	width: 10em;
+	height: 1.5em;
+	padding: 5px 15px;
+	border: none;
+	outline: none;
+	resize: none;
+	overflow: hidden;
+	z-index: 10;
+}
+.note.selected {
+	border: 1px solid #2d2d3c;
+	resize: both;
+	z-index: 100;
 }
