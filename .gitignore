@@ -1,5 +1,6 @@
-# npm dependencies
+# dependencies
 node_modules
+bower_components
 
 # npm logs
 npm-debug.log

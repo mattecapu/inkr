@@ -1,0 +1,24 @@
+{
+  "name": "inkr",
+  "version": "1",
+  "homepage": "https://github.com/mattecapu/inkr",
+  "authors": [
+    "Matteo Capucci <mattecapu@live.it>"
+  ],
+  "description": "an ambitious tool to do everything you can do with a notebook, but better",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-hammerjs": "~2.0.0",
+    "jquery": "~2.1.3",
+    "normalize.css": "~3.0.2",
+    "react": "~0.12.2"
+  }
+}
