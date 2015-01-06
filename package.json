@@ -1,5 +1,5 @@
 {
-  "name": "more",
+  "name": "inkr",
   "version": "1.0.0",
   "description": "an ambitious tool to do everything you can do with a notebook, but better",
   "main": "index.html",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/mattecapu/more"
+    "url": "http://github.com/mattecapu/inkr"
   },
   "author": "Matteo Capucci <mattecapu@live.it>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mattecapu/more/issues"
+    "url": "https://github.com/mattecapu/inkr/issues"
   },
-  "homepage": "https://github.com/mattecapu/more",
+  "homepage": "https://github.com/mattecapu/inkr",
   "devDependencies": {
     "jstransform": "^8.2.0",
     "autoprefixer": "^4.0.0",
