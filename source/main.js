@@ -14,11 +14,8 @@ $(() => {
 	});
 
 	$paper.on('click', '.note', (event) => {
-
 		if ($selected) $selected.removeClass('selected');
-
 		$selected = $(event.target).addClass('selected').focus();
-
 		return false;
 	});
 
@@ -35,6 +32,7 @@ $(() => {
 		if ('' === $.trim($note.val())) {
 			delete_note(+$note.attr('data-id'));
 		}
+		$toolbar.children('.var').removeClass('note-actions').children().remove();
 	});
 
 	$(window).keyup(() => $selected && $selected.focus());
