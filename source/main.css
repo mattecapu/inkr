@@ -18,7 +18,7 @@ body {
 
 .toolbar {
 	padding: 10px;
-	background: #000;
+	background: #24242C;
 	font-family: 'Consolas', monospace;
 	font-size: 0px;
 }
@@ -28,9 +28,10 @@ body {
 	}
 		.toolbar button {
 			border: none;
+			outline: none;
 			padding: 5px 20px;
 			font-size: 17px;
-			background: #000;
+			background: transparent;
 			color: #fff;
 		}
 
