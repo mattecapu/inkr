@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "build": "npm run build:js && npm run build:css && copy source\\index.html build\\index.html /Y",
-    "build:js": "node build.js source/main.js > build/main.js",
+    "build:js": "jsx source/ build/ --harmony",
+	"postbuild:js": "browserify build/main_r.js -o build/bundle.js",
     "build:css": "autoprefixer source/main.css -o build/main.css",
     "build:watch": "watch \"npm run build\" source"
   },
@@ -22,11 +23,15 @@
   "devDependencies": {
     "jstransform": "^8.2.0",
     "autoprefixer": "^4.0.0",
-    "watch": "latest"
+    "watch": "latest",
+    "browserify": "~8.0.3"
   },
   "dependencies": {
+    "hammerjs": "^2.0.4",
     "jquery": "^2.1.3",
     "jquery-hammerjs": "^2.0.0",
+    "katex": "^0.1.1",
+    "markdown": "^0.5.0",
     "normalize.css": "^3.0.2",
     "react": "^0.12.2",
     "react-tools": "^0.12.2"
