@@ -6,9 +6,13 @@
   "scripts": {
     "build": "npm run build:js && npm run build:css && copy source\\index.html build\\index.html /Y",
     "build:js": "jsx source/ build/ --harmony",
-	"postbuild:js": "browserify build/main_r.js -o build/bundle.js",
+	"postbuild:js": "browserify --debug build/main_r.js > build/bundle.js",
     "build:css": "autoprefixer source/main.css -o build/main.css",
-    "build:watch": "watch \"npm run build\" source"
+    "watch": "watch \"npm run build\" source"
+  },
+  "browser": {
+	"jquery": "./node_modules/jquery/dist/jquery.min.js",
+	"react": "./node_modules/react/dist/react-with-addons.min.js"
   },
   "repository": {
     "type": "git",
