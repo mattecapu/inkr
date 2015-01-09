@@ -43,18 +43,34 @@ body {
 }
 	.note {
 		position: absolute;
-		width: 10em;
-		height: 2.1em;
-		padding: 5px 15px;
-		border: none;
-		outline: none;
-		resize: none;
-		overflow: hidden;
-		z-index: 10;	
-		letter-spacing: 0.2px;
+		z-index: 10;
 	}
 	.note.selected {
-		background: #F7F7F7;
-		resize: both;
 		z-index: 100;
 	}
+		.note .note-rendered {
+			display: block;
+			margin: 0;
+		}
+		.note .note-source {
+			display: none;
+			border: none;
+			outline: none;
+			resize: none;
+		}
+		.note.selected .note-rendered {
+			display: none;
+		}
+		.note.selected .note-rendered,
+		.note .note-source	{
+			width: 10em;
+			height: 2.1em;
+			padding: 5px 15px;
+			letter-spacing: 0.2px;
+		}
+		.note.selected .note-source {
+			display: block;
+			overflow: hidden;
+			resize: both;
+			background: #F7F7F7;
+		}

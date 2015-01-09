@@ -12,19 +12,9 @@ var Paper = React.createClass({
 	render() {
 		return (
 			<div role="main" className="paper" onClick={this.addNote}>
-				{this.state.notes.map((note) => <Note {...note} />)}
+				{this.state.notes.map((note) => <Note key={note.id} {...note} />)}
 			</div>
 		);
-	},
-	addNote({clientX, clientY}) {
-		var new_note = {
-			key: note_id++,
-			position: {
-				top:  event.clientY + $(window).scrollTop() - 42,
-				left: event.clientX + $(window).scrollLeft()
-			}
-		};
-		this.setState({notes: this.state.notes.concat(new_note)});
 	},
 	
 	componentDidMount() {
@@ -32,6 +22,17 @@ var Paper = React.createClass({
 	},
 	componentDidUpdate() {
 		console.log('Paper updated!');
+	},
+	
+	addNote({clientX, clientY}) {
+		var new_note = {
+			id: note_id++,
+			position: {
+				top:  event.clientY + $(window).scrollTop() - 42,
+				left: event.clientX + $(window).scrollLeft()
+			}
+		};
+		this.setState({notes: this.state.notes.concat(new_note)});
 	}
 });
 
